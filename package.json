@@ -1,0 +1,31 @@
+{
+  "name": "jalapeno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.android.local": "npm run clean-reports && npx wdio src/config/wdio.android.local.conf.ts",
+    "test.ios.local": "npm run clean-reports && npx wdio src/config/wdio.ios.local.conf.ts",
+    "test.android.remote": "npx wdio src/config/wdio.android.remote.conf.ts",
+    "test.ios.remote": "npx wdio src/config/wdio.ios.remote.conf.ts",
+    "clean-reports": "rimraf ./allure-report && rimraf ./allure-results",
+    "allure-generate-html": "allure generate ./allure-results -o ./allure-report --clean && allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^7.23.0",
+    "@wdio/appium-service": "^7.23.0",
+    "@wdio/browserstack-service": "^7.24.0",
+    "@wdio/cli": "^7.23.0",
+    "@wdio/local-runner": "^7.23.0",
+    "@wdio/mocha-framework": "^7.23.0",
+    "allure-commandline": "^2.18.1",
+    "appium": "^1.22.3",
+    "browserstack-local": "^1.5.1",
+    "dotenv": "^16.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  }
+}
